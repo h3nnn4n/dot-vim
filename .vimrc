@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+set term=xterm-256color
+set t_Co=256
 colorscheme wombat256
 
 syntax on
