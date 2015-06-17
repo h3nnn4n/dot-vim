@@ -31,3 +31,6 @@
 [submodule "bundle/taglist.vim"]
 	path = bundle/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim
+[submodule "bundle/vim-minizinc"]
+	path = bundle/vim-minizinc
+	url = https://github.com/vale1410/vim-minizinc
