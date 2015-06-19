@@ -2,7 +2,7 @@ execute pathogen#infect()
 
 set term=xterm-256color
 set t_Co=256
-colorscheme wombat256
+colorscheme wombat256i
 
 syntax on
 filetype plugin indent on
