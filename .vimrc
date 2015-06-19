@@ -17,6 +17,15 @@ set shiftwidth=4                "An indent is 4 spaces
 set shiftround                  "Round indent to nearest shiftwidth multiple
 set smarttab
 
+noremap  <Down> ""
+noremap  <Left> ""
+noremap  <Right> ""
+noremap  <Up> ""
+noremap! <Down> <Esc>
+noremap! <Left> <Esc>
+noremap! <Right> <Esc>
+noremap! <Up> <Esc>
+
 setlocal omnifunc=necoghc#omnifunc
 
 " Uses C-n as shortcut for nerd tree
