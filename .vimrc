@@ -2,13 +2,14 @@ execute pathogen#infect()
 
 set term=xterm-256color
 set t_Co=256
-colorscheme wombat256i
+colorscheme babymate256
 
 syntax on
 filetype plugin indent on
 
 set number
 set ruler
+set nowrap
 
 set tabstop=8                   "A tab is 8 spaces
 set expandtab                   "Always uses spaces instead of tabs
@@ -17,14 +18,15 @@ set shiftwidth=4                "An indent is 4 spaces
 set shiftround                  "Round indent to nearest shiftwidth multiple
 set smarttab
 
-noremap  <Down> ""
-noremap  <Left> ""
-noremap  <Right> ""
-noremap  <Up> ""
-noremap! <Down> <Esc>
-noremap! <Left> <Esc>
-noremap! <Right> <Esc>
-noremap! <Up> <Esc>
+" stop using arrow keys!
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 
 setlocal omnifunc=necoghc#omnifunc
 
