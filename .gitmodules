@@ -34,3 +34,6 @@
 [submodule "bundle/vim-minizinc"]
 	path = bundle/vim-minizinc
 	url = https://github.com/vale1410/vim-minizinc
+[submodule "bundle/julia-vim"]
+	path = bundle/julia-vim
+	url = https://github.com/JuliaLang/julia-vim
