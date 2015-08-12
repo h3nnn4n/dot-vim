@@ -2,7 +2,7 @@ execute pathogen#infect()
 
 set term=xterm-256color
 set t_Co=256
-colorscheme babymate256
+colorscheme wombat256i
 
 syntax on
 filetype plugin indent on
@@ -46,3 +46,8 @@ set timeout timeoutlen=1500
 " rainbow parentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 au VimEnter * RainbowParentheses
+
+" Latex to unicode toggle + asYouType
+noremap <expr> <F7> LaTeXtoUnicode#Toggle()
+inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
+g:latex_to_unicode_auto = 1
