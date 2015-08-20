@@ -50,4 +50,3 @@ au VimEnter * RainbowParentheses
 " Latex to unicode toggle + asYouType
 noremap <expr> <F7> LaTeXtoUnicode#Toggle()
 inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
-g:latex_to_unicode_auto = 1
