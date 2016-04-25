@@ -11,4 +11,4 @@ git submodule update
 
 cd ~/.vim/bundle/youcompleteme
 git submodule update --init --recursive
-install.py --clang-completer
+./install.py --clang-completer --omnisharp-completer
