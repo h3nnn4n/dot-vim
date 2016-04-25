@@ -31,6 +31,15 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" neco-ghc and ghcmod stuff
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+" airline
+set laststatus=2
+"let g:airline_powerline_fonts = 1
+
 " YouCompleteMe
 let g:ycm_key_invoke_completion = '<C-space>'
 let g:ycm_key_list_select_completion=[]
