@@ -73,3 +73,34 @@ au VimEnter * RainbowParentheses
 " Latex to unicode toggle + asYouType
 noremap <expr> <F7> LaTeXtoUnicode#Toggle()
 inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
+
+" Tabular shortcuts
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+
+nmap <Leader>a+ :Tabularize /+<CR>
+vmap <Leader>a+ :Tabularize /+<CR>
+
+nmap <Leader>a- :Tabularize /-<CR>
+vmap <Leader>a- :Tabularize /-<CR>
+
+nmap <Leader>a* :Tabularize /*<CR>
+vmap <Leader>a* :Tabularize /*<CR>
+
+nmap <Leader>a/ :Tabularize //<CR>
+vmap <Leader>a/ :Tabularize //<CR>
+
+nmap <Leader>av :Tabularize /\S\+;<CR>
+vmap <Leader>av :Tabularize /\S\+;<CR>
+
+"nmap <Leader>a[ :Tabularize /[<CR>
+"vmap <Leader>a[ :Tabularize /[<CR>
+
+"nmap <Leader>a{ :Tabularize /{<CR>
+"vmap <Leader>a{ :Tabularize /{<CR>
+
+"nmap <Leader>a( :Tabularize /(<CR>
+"vmap <Leader>a( :Tabularize /(<CR>
+
+"nmap <Leader>a| :Tabularize /|<CR>
+"vmap <Leader>a| :Tabularize /|<CR>
