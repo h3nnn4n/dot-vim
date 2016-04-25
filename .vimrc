@@ -70,6 +70,10 @@ set timeout timeoutlen=1500
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 au VimEnter * RainbowParentheses
 
+" Vim-indent
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size  = 1
+
 " Latex to unicode toggle + asYouType
 noremap <expr> <F7> LaTeXtoUnicode#Toggle()
 inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
