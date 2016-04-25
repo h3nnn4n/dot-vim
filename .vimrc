@@ -60,8 +60,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-setlocal omnifunc=necoghc#omnifunc
-
 " Uses C-n as shortcut for nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
