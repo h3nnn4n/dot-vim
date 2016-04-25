@@ -13,9 +13,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/jistr/vim-nerdtree-tabs
 [submodule "bundle/neco-ghc"]
 	path = bundle/neco-ghc
 	url = https://github.com/eagletmt/neco-ghc
