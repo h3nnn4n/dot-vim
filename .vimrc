@@ -32,15 +32,15 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 " YouCompleteMe
-"let g:ycm_key_invoke_completion = '<C->'
-"
+let g:ycm_key_invoke_completion = '<C-n>'
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
-
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_auto_trigger = 1
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
