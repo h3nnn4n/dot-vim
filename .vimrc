@@ -18,6 +18,9 @@ set shiftwidth=4                "An indent is 4 spaces
 set shiftround                  "Round indent to nearest shiftwidth multiple
 set smarttab
 
+" No more :W bullshit
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W')) 
+
 " stop using arrow keys!
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
@@ -30,9 +33,9 @@ noremap   <Right>  <NOP>
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<leader>q"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 "
 " " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -43,7 +46,7 @@ setlocal omnifunc=necoghc#omnifunc
 map <C-n> :NERDTreeToggle<CR>
 
 " Uses C-a as shortcut for tasglist
-map <C-a> :TlistToggle<CR>
+map <C-g> :TlistToggle<CR>
 
 " Closes nerdtree if it is the only window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
