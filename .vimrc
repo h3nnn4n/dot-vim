@@ -56,9 +56,9 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:UltiSnipsExpandTrigger="<leader>q"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-"
-" " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsListSnippets="<c-tab>"
 
 " Uses C-n as shortcut for nerd tree
 map <C-n> :NERDTreeToggle<CR>
