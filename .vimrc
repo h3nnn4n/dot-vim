@@ -41,7 +41,7 @@ set laststatus=2
 "let g:airline_powerline_fonts = 1
 
 " YouCompleteMe
-let g:ycm_key_invoke_completion = '<C-space>'
+let g:ycm_key_invoke_completion = '<C-b>'
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 let g:ycm_min_num_of_chars_for_completion = 3
