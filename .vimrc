@@ -36,6 +36,23 @@ let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+
+" Syntastic
+map <Leader>s :SyntasticToggleMode<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
 " airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
@@ -84,10 +101,15 @@ let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size  = 1
 
 " Latex to unicode toggle + asYouType
-noremap <expr> <F7> LaTeXtoUnicode#Toggle()
+noremap  <expr> <F7> LaTeXtoUnicode#Toggle()
 inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
 
 " Tabular shortcuts
+let g:haskell_tabular = 1
+
+nmap <Leader>a; :Tabularize /::<CR>
+vmap <Leader>a; :Tabularize /::<CR>
+
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 
