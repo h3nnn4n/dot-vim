@@ -46,6 +46,8 @@ map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
+autocmd VimEnter * RltvNmbr
+
 " Syntastic
 map <Leader>s :SyntasticToggleMode<CR>
 
