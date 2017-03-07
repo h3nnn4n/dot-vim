@@ -46,7 +46,13 @@ map <silent> ts :GhcModSplitFunCase<CR>
 map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
-autocmd VimEnter * RltvNmbr
+" Rust magic
+
+set hidden
+let g:racer_cmd = "/home/h3nnn4n/.cargo/bin/racer"
+let g:ycm_rust_src_path="/home/rust-master/src/"
+let g:racer_experimental_completer = 1
+
 
 " Syntastic
 map <Leader>s :SyntasticToggleMode<CR>
