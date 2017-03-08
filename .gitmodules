@@ -79,3 +79,18 @@
 [submodule "bundle/glsl.vim"]
 	path = bundle/glsl.vim
 	url = https://github.com/beyondmarc/glsl.vim.git
+[submodule "bundle/numbers.vim"]
+	path = bundle/numbers.vim
+	url = https://github.com/myusuf3/numbers.vim
+[submodule "bundle/rust.vim"]
+	path = bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "bundle/vim-racer"]
+	path = bundle/vim-racer
+	url = https://github.com/racer-rust/vim-racer
+[submodule "bundle/vim-cargo"]
+	path = bundle/vim-cargo
+	url = https://github.com/timonv/vim-cargo
+[submodule "bundle/vim-easymotion"]
+	path = bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
