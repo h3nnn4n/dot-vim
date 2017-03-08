@@ -11,7 +11,7 @@ set number
 set ruler
 set nowrap
 
-set tabstop=8                   "A tab is 8 spaces
+set tabstop=4                   "A tab is 8 spaces
 set expandtab                   "Always uses spaces instead of tabs
 set softtabstop=4               "Insert 4 spaces when tab is pressed
 set shiftwidth=4                "An indent is 4 spaces
@@ -19,6 +19,8 @@ set shiftround                  "Round indent to nearest shiftwidth multiple
 set smarttab
 
 map <leader>f :YcmCompleter FixIt<CR>
+"set ignorecase
+"set smartcase
 
 " No more :W bullshit
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W')) 
@@ -38,6 +40,33 @@ let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
+let g:loaded_youcompleteme = 1
+
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+
+" Rust magic
+
+set hidden
+let g:racer_cmd = "/home/h3nnn4n/.cargo/bin/racer"
+let g:ycm_rust_src_path="/home/rust-master/src/"
+let g:racer_experimental_completer = 1
+
+
+" Syntastic
+map <Leader>s :SyntasticToggleMode<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
 " airline
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
@@ -51,6 +80,7 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_auto_trigger = 1
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_confirm_extra_conf = 0
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -86,10 +116,15 @@ let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size  = 1
 
 " Latex to unicode toggle + asYouType
-noremap <expr> <F7> LaTeXtoUnicode#Toggle()
+noremap  <expr> <F7> LaTeXtoUnicode#Toggle()
 inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
 
 " Tabular shortcuts
+let g:haskell_tabular = 1
+
+nmap <Leader>a; :Tabularize /::<CR>
+vmap <Leader>a; :Tabularize /::<CR>
+
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 
