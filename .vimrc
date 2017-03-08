@@ -18,6 +18,8 @@ set shiftwidth=4                "An indent is 4 spaces
 set shiftround                  "Round indent to nearest shiftwidth multiple
 set smarttab
 
+map <leader>f :YcmCompleter FixIt<CR>
+
 " No more :W bullshit
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W')) 
 
@@ -45,7 +47,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ycm_key_invoke_completion = '<C-b>'
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
-let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_auto_trigger = 1
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
@@ -166,3 +168,8 @@ augroup END
 
 nnoremap <leader>ss :OmniSharpStartServer<cr>
 nnoremap <leader>sp :OmniSharpStopServer<cr>
+
+"set spell spelllang=pt,en
+
+highlight clear SpellBad
+highlight SpellBad term=reverse cterm=underline
