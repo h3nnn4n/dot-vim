@@ -18,6 +18,7 @@ set shiftwidth=4                "An indent is 4 spaces
 set shiftround                  "Round indent to nearest shiftwidth multiple
 set smarttab
 
+map <leader>f :YcmCompleter FixIt<CR>
 "set ignorecase
 "set smartcase
 
@@ -202,3 +203,8 @@ augroup END
 
 nnoremap <leader>ss :OmniSharpStartServer<cr>
 nnoremap <leader>sp :OmniSharpStopServer<cr>
+
+"set spell spelllang=pt,en
+
+highlight clear SpellBad
+highlight SpellBad term=reverse cterm=underline
