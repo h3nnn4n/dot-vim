@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cp ../dot-vim ~/.vim -rv
+cp -r ../dot-vim ~/.vim
 
-cd ~/.vim -v
+cd ~/.vim
 
-ln -s ~/.vim/.vimrc ~/.vimrc -v
+ln -s ~/.vim/.vimrc ~/.vimrc
 
 git submodule init
 git submodule update
