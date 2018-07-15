@@ -1,22 +1,54 @@
 execute pathogen#infect()
 
-set term=xterm-256color
 set t_Co=256
 colorscheme wombat256i
 
 syntax on
-filetype plugin indent on
-
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+set mouse=a
+set term=xterm-256color
 set number
 set ruler
 set nowrap
-
-set tabstop=4                   "A tab is 8 spaces
+set nocompatible      " We're running Vim, not Vi!
+set omnifunc=syntaxcomplete#Complete
+set tabstop=2                   "A tab is 8 spaces
 set expandtab                   "Always uses spaces instead of tabs
-set softtabstop=4               "Insert 4 spaces when tab is pressed
-set shiftwidth=4                "An indent is 4 spaces
+set softtabstop=2               "Insert 4 spaces when tab is pressed
+set shiftwidth=2                "An indent is 4 spaces
 set shiftround                  "Round indent to nearest shiftwidth multiple
 set smarttab
+set scrolloff=2       " Show 2 lines of context around the cursor.
+set sidescrolloff=3   " Show 3 columns of context around the cursor.
+set novisualbell        " No beeping.
+set noerrorbells      " don't beep
+
+""
+"" List chars
+""
+set list
+set listchars=""                  " Reset the listchars
+set listchars=tab:▸\              " a tab should display as "▸"
+set listchars+=trail:.            " show trailing spaces as dots
+"set listchars+=eol:¬              " show end of line as "¬"
+set listchars+=extends:>          " The character to show in the last column when wrap is off and the line goes beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the last column when wrap is off and the line goes beyond the left of the screen
+
+
+set wildmenu
+
+
+"vim-easymotion
+let g:EasyMotion_smartcase = 1
+map <leader><leader>c <plug>(easymotion-s2)
+
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 map <leader>f :YcmCompleter FixIt<CR>
 "set ignorecase
@@ -38,9 +70,15 @@ noremap   <Right>  <NOP>
 " neco-ghc and ghcmod stuff
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
+
+"YCM stuff
+let g:ycm_semantic_triggers = {'haskell' : ['.'], 'ruby' : ['.', '::']}
 let g:loaded_youcompleteme = 1
+
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
@@ -50,10 +88,15 @@ map <silent> te :GhcModTypeClear<CR>
 " Rust magic
 
 set hidden
-let g:racer_cmd = "/home/h3nnn4n/.cargo/bin/racer"
-let g:ycm_rust_src_path="/home/rust-master/src/"
+let g:ycm_rust_src_path="/Users/renanssilva/Developer/rust-master/src/"
+let g:racer_cmd = "/Users/renanssilva/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
+let g:rustfmt_autosave = 1
 
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " Syntastic
 map <Leader>s :SyntasticToggleMode<CR>
@@ -97,7 +140,7 @@ let g:UltiSnipsEditSplit="vertical"
 " Uses C-n as shortcut for nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
-" Uses C-a as shortcut for tasglist
+" Uses C-g as shortcut for tasglist
 map <C-g> :TlistToggle<CR>
 
 " Closes nerdtree if it is the only window
@@ -155,6 +198,8 @@ vmap <Leader>av :Tabularize /\S\+;<CR>
 "nmap <Leader>a| :Tabularize /|<CR>
 "vmap <Leader>a| :Tabularize /|<CR>
 
+"fuzzy search (meio lixento)
+let g:ctrlp_working_path_mode = 'w'
 
 " OmniSharp stuff
 let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
@@ -208,3 +253,15 @@ nnoremap <leader>sp :OmniSharpStopServer<cr>
 
 highlight clear SpellBad
 highlight SpellBad term=reverse cterm=underline
+
+" VimEasy motion themes
+
+"hi link EasyMotionIncCursor ErrorMsg
+"hi link EasyMotionIncSearch ErrorMsg
+"hi link EasyMotionShade  Comment
+"hi link EasyMotionTarget ErrorMsg
+"hi link EasyMotionTarget2First MatchParen
+"hi link EasyMotionTarget2Second MatchParen
+"
+"hi link EasyMotionIncSearch Search
+hi link EasyMotionMoveHL ErrorMsg
