@@ -1,96 +1,126 @@
 [submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+  path = bundle/vim-fugitive
+  url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/ddollar/nerdcommenter
+  path = bundle/nerdcommenter
+  url = https://github.com/ddollar/nerdcommenter
 [submodule "bundle/vim-gitgutter"]
-	path = bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
+  path = bundle/vim-gitgutter
+  url = https://github.com/airblade/vim-gitgutter
 [submodule "bundle/rainbow_parentheses.vim"]
-	path = bundle/rainbow_parentheses.vim
-        url = https://github.com/junegunn/rainbow_parentheses.vim
+  path = bundle/rainbow_parentheses.vim
+  url = https://github.com/junegunn/rainbow_parentheses.vim
 [submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
+  path = bundle/syntastic
+  url = https://github.com/scrooloose/syntastic
 [submodule "bundle/neco-ghc"]
-	path = bundle/neco-ghc
-	url = https://github.com/eagletmt/neco-ghc
+  path = bundle/neco-ghc
+  url = https://github.com/eagletmt/neco-ghc
 [submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
-	url = https://github.com/anyakichi/vim-surround
+  path = bundle/vim-surround
+  url = https://github.com/anyakichi/vim-surround
 [submodule "bundle/vim-airline"]
-	path = bundle/vim-airline
-	url = https://github.com/bling/vim-airline
+  path = bundle/vim-airline
+  url = https://github.com/bling/vim-airline
 [submodule "bundle/vim-flake8"]
-	path = bundle/vim-flake8
-	url = https://github.com/nvie/vim-flake8
+  path = bundle/vim-flake8
+  url = https://github.com/nvie/vim-flake8
 [submodule "bundle/taglist.vim"]
-	path = bundle/taglist.vim
-	url = https://github.com/vim-scripts/taglist.vim
+  path = bundle/taglist.vim
+  url = https://github.com/vim-scripts/taglist.vim
 [submodule "bundle/vim-minizinc"]
-	path = bundle/vim-minizinc
-	url = https://github.com/vale1410/vim-minizinc
+  path = bundle/vim-minizinc
+  url = https://github.com/vale1410/vim-minizinc
 [submodule "bundle/julia-vim"]
-	path = bundle/julia-vim
-	url = https://github.com/JuliaLang/julia-vim
+  path = bundle/julia-vim
+  url = https://github.com/JuliaLang/julia-vim
 [submodule "bundle/a.vim"]
-	path = bundle/a.vim
-	url = https://github.com/vim-scripts/a.vim
+  path = bundle/a.vim
+  url = https://github.com/vim-scripts/a.vim
 [submodule "bundle/vim-snippets"]
-	path = bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets
+  path = bundle/vim-snippets
+  url = https://github.com/honza/vim-snippets
 [submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips
+  path = bundle/ultisnips
+  url = https://github.com/SirVer/ultisnips
 [submodule "nerdtree"]
-	path = bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/youcompleteme"]
-	path = bundle/youcompleteme
-	url = https://github.com/valloric/youcompleteme
+  path = bundle/nerdtree
+  url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/tabular"]
-	path = bundle/tabular
-	url = https://github.com/godlygeek/tabular
-[submodule "bundle/omnisharp-vim"]
-	path = bundle/omnisharp-vim
-	url = https://github.com/omnisharp/omnisharp-vim
+  path = bundle/tabular
+  url = https://github.com/godlygeek/tabular
 [submodule "bundle/vim-dispatch"]
-	path = bundle/vim-dispatch
-	url = git://github.com/tpope/vim-dispatch.git
+  path = bundle/vim-dispatch
+  url = git://github.com/tpope/vim-dispatch.git
 [submodule "bundle/ctrlp.vim"]
-	path = bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
+  path = bundle/ctrlp.vim
+  url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "bundle/vim-trailing-whitespace"]
-	path = bundle/vim-trailing-whitespace
-	url = https://github.com/bronson/vim-trailing-whitespace
+  path = bundle/vim-trailing-whitespace
+  url = https://github.com/bronson/vim-trailing-whitespace
 [submodule "bundle/vim-indent-guides"]
-	path = bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides
+  path = bundle/vim-indent-guides
+  url = https://github.com/nathanaelkane/vim-indent-guides
 [submodule "bundle/vim-airline-themes"]
-	path = bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
+  path = bundle/vim-airline-themes
+  url = https://github.com/vim-airline/vim-airline-themes
 [submodule "bundle/ghcmod-vim"]
-	path = bundle/ghcmod-vim
-	url = https://github.com/eagletmt/ghcmod-vim
+  path = bundle/ghcmod-vim
+  url = https://github.com/eagletmt/ghcmod-vim
 [submodule "bundle/vimproc.vim"]
-	path = bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim
+  path = bundle/vimproc.vim
+  url = https://github.com/Shougo/vimproc.vim
 [submodule "bundle/glsl.vim"]
-	path = bundle/glsl.vim
-	url = https://github.com/beyondmarc/glsl.vim.git
+  path = bundle/glsl.vim
+  url = https://github.com/beyondmarc/glsl.vim.git
 [submodule "bundle/numbers.vim"]
-	path = bundle/numbers.vim
-	url = https://github.com/myusuf3/numbers.vim
+  path = bundle/numbers.vim
+  url = https://github.com/myusuf3/numbers.vim
 [submodule "bundle/rust.vim"]
-	path = bundle/rust.vim
-	url = https://github.com/rust-lang/rust.vim
+  path = bundle/rust.vim
+  url = https://github.com/rust-lang/rust.vim
 [submodule "bundle/vim-racer"]
-	path = bundle/vim-racer
-	url = https://github.com/racer-rust/vim-racer
+  path = bundle/vim-racer
+  url = https://github.com/racer-rust/vim-racer
 [submodule "bundle/vim-cargo"]
-	path = bundle/vim-cargo
-	url = https://github.com/timonv/vim-cargo
+  path = bundle/vim-cargo
+  url = https://github.com/timonv/vim-cargo
 [submodule "bundle/vim-easymotion"]
-	path = bundle/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion
+  path = bundle/vim-easymotion
+  url = https://github.com/easymotion/vim-easymotion
+[submodule "bundle/youcompleteme"]
+  path = bundle/youcompleteme
+  url = https://github.com/valloric/youcompleteme
+[submodule "bundle/vim-better-whitespace"]
+  path = bundle/vim-better-whitespace
+  url = https://github.com/ntpeters/vim-better-whitespace
+[submodule "bundle/vim-buffergator"]
+  path = bundle/vim-buffergator
+  url = https://github.com/jeetsukumaran/vim-buffergator
+[submodule "bundle/vim-bundler"]
+  path = bundle/vim-bundler
+  url = https://github.com/tpope/vim-bundler
+[submodule "bundle/vim-gemfile"]
+  path = bundle/vim-gemfile
+  url = https://github.com/muz/vim-gemfile
+[submodule "bundle/vim-css-color"]
+  path = bundle/vim-css-color
+  url = https://github.com/skammer/vim-css-color
+[submodule "bundle/vim-endwise"]
+  path = bundle/vim-endwise
+  url = https://github.com/tpope/vim-endwise
+[submodule "bundle/vim-rails"]
+  path = bundle/vim-rails
+  url = https://github.com/tpope/vim-rails
+[submodule "bundle/vim-rake"]
+  path = bundle/vim-rake
+  url = https://github.com/tpope/vim-rake
+[submodule "bundle/vim-projectionist"]
+  path = bundle/vim-projectionist
+  url = https://github.com/tpope/vim-projectionist
+[submodule "bundle/the_silver_searcher"]
+  path = bundle/the_silver_searcher
+  url = https://github.com/ggreer/the_silver_searcher
+[submodule "omnisharp-vim"]
+  path = omnisharp-vim
+  url = https://github.com/omnisharp/omnisharp-vim
