@@ -35,6 +35,17 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" pep8
+" let g:PyFlakeOnWrite = 1
+" let g:PyFlakeForcePyVersion = 3
+" let g:PyFlakeDisabledMessages = 'E116'
+" let g:PyFlakeCheckers = 'pep8'
+let g:flake8_show_quickfix=0  " don't show
+autocmd BufWritePost *.py call Flake8()
+
+
+
+
 " neco-ghc and ghcmod stuff
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
@@ -53,6 +64,7 @@ set hidden
 let g:racer_cmd = "/home/h3nnn4n/.cargo/bin/racer"
 let g:ycm_rust_src_path="/home/rust-master/src/"
 let g:racer_experimental_completer = 1
+let g:rustfmt_autosave = 1
 
 
 " Syntastic
@@ -66,6 +78,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages={'level':'warnings'}
+"let g:syntastic_python_flake8_exec = 'python3.5'
 
 " airline
 set laststatus=2
