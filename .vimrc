@@ -3,12 +3,29 @@ execute pathogen#infect()
 set t_Co=256
 colorscheme wombat256i
 
+set rtp+=/usr/local/opt/fzf
+
+if has("gui_running")
+  "syntax on
+  "set hlsearch
+  colorscheme macvim
+  "set bs=2
+  set ai
+  "set ruler
+endif
+
+au BufRead,BufNewFile *.ks set filetype=kos
+
 syntax on
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
-set mouse=a
-set term=xterm-256color
+
+if !has('nvim')
+  set mouse=a
+  set term=xterm-256color
+endif
+
 set number
 set ruler
 set nowrap
@@ -24,6 +41,9 @@ set scrolloff=2       " Show 2 lines of context around the cursor.
 set sidescrolloff=3   " Show 3 columns of context around the cursor.
 set novisualbell        " No beeping.
 set noerrorbells      " don't beep
+
+set cursorline
+set cursorcolumn
 
 ""
 "" List chars
