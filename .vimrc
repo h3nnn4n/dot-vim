@@ -1,42 +1,43 @@
 execute pathogen#infect()
 
 set t_Co=256
-colorscheme wombat256i
+colorscheme wombat256mod
+set background=dark
 
 set rtp+=/usr/local/opt/fzf
 
 if has("gui_running")
-  "syntax on
-  "set hlsearch
-  colorscheme macvim
-  "set bs=2
+  colorscheme wombat256mod
   set ai
-  "set ruler
 endif
 
 au BufRead,BufNewFile *.ks set filetype=kos
 
-syntax on
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
+" Show indent guides when vim opens
+"let g:indent_guides_enable_on_vim_startup = 1
+
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
+"hi IndentGuidesOdd  ctermbg=lightgrey
+"hi IndentGuidesEven ctermbg=darkgrey
 
 if !has('nvim')
   set mouse=a
   set term=xterm-256color
 endif
 
+filetype plugin indent on
+
 set number
 set ruler
 set nowrap
 set nocompatible      " We're running Vim, not Vi!
-set omnifunc=syntaxcomplete#Complete
-set tabstop=2                   "A tab is 8 spaces
+set tabstop=2                   "A tab is 2 spaces
 set expandtab                   "Always uses spaces instead of tabs
-set softtabstop=2               "Insert 4 spaces when tab is pressed
-set shiftwidth=2                "An indent is 4 spaces
+set softtabstop=2               "Insert 2 spaces when tab is pressed
+set shiftwidth=2                "An indent is 2 spaces
 set shiftround                  "Round indent to nearest shiftwidth multiple
-set smarttab
 set scrolloff=2       " Show 2 lines of context around the cursor.
 set sidescrolloff=3   " Show 3 columns of context around the cursor.
 set novisualbell        " No beeping.
@@ -50,9 +51,10 @@ set cursorcolumn
 ""
 set list
 set listchars=""                  " Reset the listchars
-set listchars=tab:▸\              " a tab should display as "▸"
+set listchars+=tab:▸\             " a tab should display as "▸"
 set listchars+=trail:.            " show trailing spaces as dots
-"set listchars+=eol:¬              " show end of line as "¬"
+set listchars+=space:·            " show leading space as "·"
+set listchars+=eol:¬              " show end of line as "¬"
 set listchars+=extends:>          " The character to show in the last column when wrap is off and the line goes beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is off and the line goes beyond the left of the screen
 
@@ -232,55 +234,10 @@ vmap <Leader>av :Tabularize /\S\+;<CR>
 "vmap <Leader>a| :Tabularize /|<CR>
 
 "fuzzy search (meio lixento)
-let g:ctrlp_working_path_mode = 'w'
+"let g:ctrlp_working_path_mode = 'w'
 
 " OmniSharp stuff
-let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
-
-augroup omnisharp_commands
-    autocmd!
-
-    "Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)
-    autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-
-    " Synchronous build (blocks Vim)
-    "autocmd FileType cs nnoremap <F5> :wa!<cr>:OmniSharpBuild<cr>
-    " Builds can also run asynchronously with vim-dispatch installed
-    autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
-    " automatic syntax check on events (TextChanged requires Vim 7.4)
-    autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
-
-    " Automatically add new cs files to the nearest project on save
-    autocmd BufWritePost *.cs call OmniSharp#AddToProject()
-
-    "show type information automatically when the cursor stops moving
-    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-
-    "The following commands are contextual, based on the current cursor position.
-
-    autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
-    autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
-    autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
-    autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
-    autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
-    "finds members in the current buffer
-    autocmd FileType cs nnoremap <leader>fm :OmniSharpFindMembers<cr>
-    " cursor can be anywhere on the line containing an issue
-    autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
-    autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
-    autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
-    autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
-    "navigate up by method/property/field
-    autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr>
-    "navigate down by method/property/field
-    autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr>
-
-augroup END
-
-"let g:OmniSharp_server_type = 'roslyn'
-
-nnoremap <leader>ss :OmniSharpStartServer<cr>
-nnoremap <leader>sp :OmniSharpStopServer<cr>
+"let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
 
 "set spell spelllang=pt,en
 
@@ -298,3 +255,4 @@ highlight SpellBad term=reverse cterm=underline
 "
 "hi link EasyMotionIncSearch Search
 hi link EasyMotionMoveHL ErrorMsg
+
