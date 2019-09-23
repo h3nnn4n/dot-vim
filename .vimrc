@@ -4,23 +4,15 @@ set t_Co=256
 colorscheme wombat256mod
 set background=dark
 
-set rtp+=/usr/local/opt/fzf
+" Changes <Leader> to from \ to . and the time out to 1.5 secs instead of 1sec
+let mapleader=","
+set timeout timeoutlen=1500
 
 if has("gui_running")
-  colorscheme wombat256mod
   set ai
 endif
 
 au BufRead,BufNewFile *.ks set filetype=kos
-
-" Show indent guides when vim opens
-"let g:indent_guides_enable_on_vim_startup = 1
-
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-
-"hi IndentGuidesOdd  ctermbg=lightgrey
-"hi IndentGuidesEven ctermbg=darkgrey
 
 if !has('nvim')
   set mouse=a
@@ -58,26 +50,36 @@ set listchars+=eol:¬              " show end of line as "¬"
 set listchars+=extends:>          " The character to show in the last column when wrap is off and the line goes beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is off and the line goes beyond the left of the screen
 
-
 set wildmenu
 
+""
+""
+"" Extensions and stuff
+""
+""
+
+" FZF STUFF
+set rtp+=/usr/local/opt/fzf
+
+nmap <Leader>f :GFiles<CR>
+nmap <Leader>F :Files<CR>
+nmap <Leader>l :BLines<CR>
+nmap <Leader>L :Lines<CR>
+
+nmap <Leader>/ :Rg<Space>
+" END OF FZF STUFF
 
 "vim-easymotion
 let g:EasyMotion_smartcase = 1
 map <leader><leader>c <plug>(easymotion-s2)
 
-" Gif config
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
-map <leader>f :YcmCompleter FixIt<CR>
-"set ignorecase
-"set smartcase
-
 " No more :W bullshit
-cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W')) 
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
 " stop using arrow keys!
 inoremap  <Up>     <NOP>
@@ -97,26 +99,9 @@ noremap   <Right>  <NOP>
 let g:flake8_show_quickfix=0  " don't show
 autocmd BufWritePost *.py call Flake8()
 
-
-
-
-" neco-ghc and ghcmod stuff
-let g:haskellmode_completion_ghc = 0
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-
-"YCM stuff
-let g:ycm_semantic_triggers = {'haskell' : ['.'], 'ruby' : ['.', '::']}
-let g:loaded_youcompleteme = 1
-
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
 
 " Rust magic
 
@@ -150,19 +135,6 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
 
-" YouCompleteMe
-let g:ycm_key_invoke_completion = '<C-b>'
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_auto_trigger = 1
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_confirm_extra_conf = 0
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<leader>q"
@@ -170,20 +142,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
-"let g:UltiSnipsListSnippets="<c-tab>"
+let g:UltiSnipsListSnippets="<c-tab>"
 
 " Uses C-n as shortcut for nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
-" Uses C-g as shortcut for tasglist
-map <C-g> :TlistToggle<CR>
-
 " Closes nerdtree if it is the only window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Changes <Leader> to from \ to . and the time out to 1.5 secs instead of 1sec
-let mapleader=","
-set timeout timeoutlen=1500
 
 " rainbow parentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
@@ -192,13 +157,6 @@ au VimEnter * RainbowParentheses
 " Vim-indent
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size  = 1
-
-" Latex to unicode toggle + asYouType
-noremap  <expr> <F7> LaTeXtoUnicode#Toggle()
-inoremap <expr> <F7> LaTeXtoUnicode#Toggle()
-
-" Tabular shortcuts
-let g:haskell_tabular = 1
 
 nmap <Leader>a; :Tabularize /::<CR>
 vmap <Leader>a; :Tabularize /::<CR>
@@ -232,12 +190,6 @@ vmap <Leader>av :Tabularize /\S\+;<CR>
 
 "nmap <Leader>a| :Tabularize /|<CR>
 "vmap <Leader>a| :Tabularize /|<CR>
-
-"fuzzy search (meio lixento)
-"let g:ctrlp_working_path_mode = 'w'
-
-" OmniSharp stuff
-"let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
 
 "set spell spelllang=pt,en
 
