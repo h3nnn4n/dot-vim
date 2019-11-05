@@ -118,9 +118,6 @@
 [submodule "bundle/the_silver_searcher"]
   path = bundle/the_silver_searcher
   url = https://github.com/ggreer/the_silver_searcher
-[submodule "omnisharp-vim"]
-  path = omnisharp-vim
-  url = https://github.com/omnisharp/omnisharp-vim
 [submodule "bundle/vim-rubocop"]
 	path = bundle/vim-rubocop
 	url = https://github.com/ngmy/vim-rubocop
