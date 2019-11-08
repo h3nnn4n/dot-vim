@@ -1,16 +1,10 @@
 execute pathogen#infect()
 
 set t_Co=256
-colorscheme wombat256mod
-set background=dark
 
 " Changes <Leader> to from \ to . and the time out to 1.5 secs instead of 1sec
 let mapleader=","
 set timeout timeoutlen=1500
-
-if has("gui_running")
-  set ai
-endif
 
 au BufRead,BufNewFile *.ks set filetype=kos
 
@@ -18,6 +12,12 @@ if !has('nvim')
   set mouse=a
   set term=xterm-256color
 endif
+
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+
+colorscheme gruvbox
+set background=dark
 
 filetype plugin indent on
 
