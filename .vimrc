@@ -59,7 +59,8 @@ set wildmenu
 ""
 
 " FZF STUFF
-set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/fzf " for osx, with homebrew
+set rtp+=~/.fzf  " For linux, with git
 
 nmap <Leader>f :GFiles<CR>
 nmap <Leader>F :Files<CR>
