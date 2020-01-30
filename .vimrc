@@ -1,16 +1,10 @@
 execute pathogen#infect()
 
 set t_Co=256
-colorscheme wombat256mod
-set background=dark
 
 " Changes <Leader> to from \ to . and the time out to 1.5 secs instead of 1sec
 let mapleader=","
 set timeout timeoutlen=1500
-
-if has("gui_running")
-  set ai
-endif
 
 au BufRead,BufNewFile *.ks set filetype=kos
 
@@ -18,6 +12,12 @@ if !has('nvim')
   set mouse=a
   set term=xterm-256color
 endif
+
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+
+colorscheme gruvbox
+set background=dark
 
 filetype plugin indent on
 
@@ -57,6 +57,13 @@ set wildmenu
 "" Extensions and stuff
 ""
 ""
+
+" Vim hardtime
+let g:hardtime_default_on = 1
+let g:hardtime_ignore_buffer_patterns = ["NERD.*"]
+let g:hardtime_ignore_quickfix = 1
+let g:hardtime_allow_different_key = 1
+let g:hardtime_maxcount = 2
 
 " FZF STUFF
 set rtp+=/usr/local/opt/fzf " for osx, with homebrew
@@ -123,6 +130,8 @@ map <Leader>s :SyntasticToggleMode<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0

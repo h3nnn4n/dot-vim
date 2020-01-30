@@ -1,9 +1,5 @@
 #!/bin/bash
 
-cp -r ../dot-vim ~/.vim
-
-cd ~/.vim
-
 ln -s ~/.vim/.vimrc ~/.vimrc
 
 git submodule init
